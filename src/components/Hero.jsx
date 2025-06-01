@@ -1,3 +1,5 @@
+"use client";
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -108,6 +110,7 @@ const Hero = () => {
               >
                 <video
                   ref={nextVdRef}
+                  rel="preload"
                   src={getVideoSrc((currentIndex % totalVideos) + 1)}
                   loop
                   muted
@@ -123,6 +126,7 @@ const Hero = () => {
 
           <video
             ref={nextVdRef}
+            rel="preload"
             src={getVideoSrc(currentIndex)}
             loop
             muted
@@ -137,6 +141,7 @@ const Hero = () => {
               currentIndex === totalVideos - 1 ? 1 : currentIndex
             )}
             autoPlay
+            rel="preload"
             loop
             muted
             preload="auto"
